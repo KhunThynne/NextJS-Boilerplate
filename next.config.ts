@@ -52,9 +52,7 @@ const nextConfig = {
     dangerouslyAllowLocalIP: true,
     remotePatterns: [],
   },
-  env: {
-    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: process.env.STRIPE_PUBLISHABLE_KEY,
-  },
+  env: {},
 } satisfies NextConfig;
 
 export default withPWA(withNextIntl(nextConfig));
