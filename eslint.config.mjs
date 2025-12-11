@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "commitlint.config.js",
+    "husky/**",
+    "package-lock.json",
   ]),
 ]);
 
