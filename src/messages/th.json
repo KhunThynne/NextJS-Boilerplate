@@ -2,5 +2,8 @@
   "Index": {
     "title": "Next.js Starter",
     "description": "เทมเพลตเริ่มต้นครบวงจรด้วย Next.js, Tailwind, Shadcn และอื่นๆ"
+  },
+  "not_found": {
+    "description": "ไม่พบ"
   }
 }

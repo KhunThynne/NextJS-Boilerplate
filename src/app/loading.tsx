@@ -1,3 +1,3 @@
-export default function LocaleLoading() {
+export default function RootLoading() {
   return <div>Loading...</div>;
 }

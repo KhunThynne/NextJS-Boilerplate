@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const t = useTranslations("Index");
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
