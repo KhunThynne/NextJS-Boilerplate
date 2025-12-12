@@ -3,7 +3,7 @@ import Credentials from "next-auth/providers/credentials";
 import DiscordProvider from "next-auth/providers/discord";
 
 import type { JWT } from "next-auth/jwt";
-import { DiscordUser } from "../../../next-env";
+
 // import { env } from "@/env";
 // import type { DiscordUser } from "@type/user.type";
 // import { executeAuth } from "../graphql/execute";
@@ -41,6 +41,7 @@ export const AuthProvider = NextAuth({
       },
       async authorize(credentials) {
         if (!credentials) return null;
+        return null;
 
         // try {
         //   const res = await executeAuth(LoginDocument, {
@@ -119,26 +120,27 @@ export const AuthProvider = NextAuth({
       }
       switch (account.provider) {
         case "discord": {
-          const discordUser = profile as unknown as DiscordUser;
-          try {
-            if (!account.access_token || !profile?.email) return false;
-            const authResult = await AuthenticateAndLinkProvider({
-              accessToken: account.access_token,
-              email: profile.email,
-              name: discordUser.username,
-              provider: account.provider,
-              providerAccountId: account.providerAccountId,
-              refreshToken: account.refresh_token,
-              image: discordUser.image_url,
-            });
-            if (authResult) {
-              return true;
-            }
-            throw new Error("Discord auth fail");
-          } catch (err) {
-            console.error("❌ Error during Discord RegisterAndLogin", err);
-            return false;
-          }
+          // const discordUser = profile as unknown as DiscordUser;
+          // try {
+          //   if (!account.access_token || !profile?.email) return false;
+          //   const authResult = await AuthenticateAndLinkProvider({
+          //     accessToken: account.access_token,
+          //     email: profile.email,
+          //     name: discordUser.username,
+          //     provider: account.provider,
+          //     providerAccountId: account.providerAccountId,
+          //     refreshToken: account.refresh_token,
+          //     image: discordUser.image_url,
+          //   });
+          //   if (authResult) {
+          //     return true;
+          //   }
+          //   throw new Error("Discord auth fail");
+          // } catch (err) {
+          //   console.error("❌ Error during Discord RegisterAndLogin", err);
+          //   return false;
+          // }
+          return true;
         }
 
         case "credentials":
