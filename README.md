@@ -1,7 +1,7 @@
 # ⚡ Next.js Boilerplate
 
-> A high-performance, feature-rich starter template for modern web development. Built with Next.js 16, TypeScript, and TailwindCSS v4.
-xx
+> A high-performance, feature-rich starter template for modern web development. Built with Next.js 16, TypeScript, TailwindCSS v4, and NextAuth v5.
+
 ---
 
 ## 📸 Showcase
