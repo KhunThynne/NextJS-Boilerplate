@@ -23,6 +23,7 @@ This project utilizes a cutting-edge technology stack to ensure performance, sca
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **PWA**: [Next-PWA](https://github.com/DuCanhGH/next-pwa) (@ducanh2912/next-pwa)
 - **Internationalization**: [next-intl](https://next-intl-docs.vercel.app/)
+- **Authentication**: [NextAuth.js v5 (Beta)](https://authjs.dev/)
 
 ### Styling & UI
 - **CSS Engine**: [TailwindCSS v4](https://tailwindcss.com/)
@@ -48,6 +49,7 @@ This project utilizes a cutting-edge technology stack to ensure performance, sca
 - **📱 PWA Supported**: Installable on mobile and desktop devices.
 - **🌍 Internationalization**: Built-in i18n support.
 - **⚛️ React 19**: Leveraging the latest React features.
+- **🔐 Secure Authentication**: Integrated with NextAuth.js v5 (Beta).
 - **🎨 Modern Styling**: Tailwind v4 with advanced utility merging.
 
 ---
