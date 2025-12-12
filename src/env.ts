@@ -4,7 +4,12 @@ import { z } from "zod";
 export const env = createEnv({
   server: {},
   client: {
-    NEXT_PUBLIC_NODE_ENV: z.enum(["development", "production", "test"]),
+    NEXT_PUBLIC_NODE_ENV: z.enum([
+      "development",
+      "production",
+      "test",
+      "vercel",
+    ]),
   },
   runtimeEnv: {
     // Server ,
