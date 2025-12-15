@@ -6,11 +6,11 @@
 
 ## 📸 Showcase
 
-| **Desktop View** | **Mobile View** |
-|:---:|:---:|
+|                                       **Desktop View**                                        |                                       **Mobile View**                                       |
+| :-------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------: |
 | <img src="https://placehold.co/600x400?text=Desktop+Preview" alt="Desktop View" width="100%"> | <img src="https://placehold.co/375x812?text=Mobile+Preview" alt="Mobile View" width="100%"> |
 
-*(Replace the placeholder images above with your actual application screenshots)*
+_(Replace the placeholder images above with your actual application screenshots)_
 
 ---
 
@@ -19,6 +19,7 @@
 This project utilizes a cutting-edge technology stack to ensure performance, scalability, and developer experience.
 
 ### Core
+
 - **Framework**: [Next.js 16](https://nextjs.org/) (App Router & Turbopack)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **PWA**: [Next-PWA](https://github.com/DuCanhGH/next-pwa) (@ducanh2912/next-pwa)
@@ -26,16 +27,19 @@ This project utilizes a cutting-edge technology stack to ensure performance, sca
 - **Authentication**: [NextAuth.js v5 (Beta)](https://authjs.dev/)
 
 ### Styling & UI
+
 - **CSS Engine**: [TailwindCSS v4](https://tailwindcss.com/)
 - **Utilities**: `clsx`, `tailwind-merge`, `class-variance-authority` (CVA)
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **Animations**: `tw-animate-css`
 
 ### State & Data
+
 - **Server State**: [TanStack Query v5](https://tanstack.com/query/latest) (React Query)
 - **API**: GraphQL Request
 
 ### Quality & DX
+
 - **Linting**: ESLint
 - **Git Hooks**: Husky & Commitlint
 - **Versioning**: [standard-version](https://github.com/conventional-changelog/standard-version)
@@ -66,17 +70,20 @@ Review the prerequisites and follow the steps below to set up the project locall
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd nextjs-boilerplate
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start the development server**
+
    ```bash
    npm run dev
    ```
@@ -87,13 +94,13 @@ Review the prerequisites and follow the steps below to set up the project locall
 
 ## 📜 Scripts
 
-| Script | Description |
-| :--- | :--- |
-| `npm run dev` | Starts the development server with Turbopack |
-| `npm run build` | Builds the application for production |
-| `npm run start` | Starts the production server |
-| `npm run lint` | Runs ESLint to check for code quality issues |
-| `npm run prepare` | Installs Husky git hooks |
+| Script            | Description                                             |
+| :---------------- | :------------------------------------------------------ |
+| `npm run dev`     | Starts the development server with Turbopack            |
+| `npm run build`   | Builds the application for production                   |
+| `npm run start`   | Starts the production server                            |
+| `npm run lint`    | Runs ESLint to check for code quality issues            |
+| `npm run prepare` | Installs Husky git hooks                                |
 | `npm run release` | Generates a CHANGELOG and creates a new release version |
 
 ---
