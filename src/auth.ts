@@ -27,7 +27,7 @@ import { env } from "@/env";
 // }
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
-  secret: [`xd`],
+  secret: [env.AUTH_SECRET],
   basePath: "/api/auth",
   providers: [
     DiscordProvider({
@@ -41,16 +41,16 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        // if (
-        //   credentials.email === env.AUTH_USER &&
-        //   credentials.password === env.AUTH_PASSWORD
-        // ) {
-        //   return {
-        //     id: new Date().toString(),
-        //     email: env.AUTH_USER,
-        //     name: env.AUTH_USER,
-        //   };
-        // }
+        if (
+          credentials.email === env.AUTH_USER &&
+          credentials.password === env.AUTH_PASSWORD
+        ) {
+          return {
+            id: new Date().toString(),
+            email: env.AUTH_USER,
+            name: env.AUTH_USER,
+          };
+        }
         return null;
       },
     }),
