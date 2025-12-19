@@ -1,7 +1,6 @@
 "use server";
 import { signIn as authSignIn, signOut as authSignOut } from "@/auth";
 import { AuthError } from "next-auth";
-import { isRedirectError } from "next/dist/client/components/redirect-error";
 
 /**
  * 🔑 Server Action to handle user sign-in.
@@ -19,15 +18,16 @@ export async function signIn(...args: Parameters<typeof authSignIn>) {
       switch (error.type) {
         case "CredentialsSignin":
           // Specific message for credential failure
-          return new Error(
-            "Invalid credentials. Please check your email and password."
-          );
+          return {
+            message:
+              "Invalid credentials. Please check your email and password.",
+          };
 
         default:
           // Generic message for other authentication errors (e.g., OAuth issues)
-          return new Error(
-            "Something went wrong during sign-in. Please try again."
-          );
+          return {
+            message: "Something went wrong during sign-in. Please try again.",
+          };
       }
     }
     // Re-throw non-AuthErrors (e.g., network issues)

@@ -1,5 +1,5 @@
 "use client";
-
+import { useAppForm } from "@/components/createAppForm";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -13,7 +13,7 @@ import { signIn } from "@/libs/next-auth/actions/authentication";
 import { isRedirectError } from "next/dist/client/components/redirect-error";
 import { useSearchParams } from "next/navigation";
 import { toast } from "sonner";
-import { useAppForm } from "@/components/createAppForm";
+
 export const LoginForm = () => {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/";
@@ -28,7 +28,7 @@ export const LoginForm = () => {
         redirectTo: callbackUrl,
       })
         .then((result) => {
-          if (result instanceof Error) {
+          if (result) {
             toast.error(result.message);
             return;
           }
