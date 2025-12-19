@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import Providers from "../providers";
 import { getMessages } from "next-intl/server";
+import { auth } from "@/auth";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,14 +38,18 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   const messages = await getMessages();
-
+  const session = await auth();
   return (
     <html lang={locale}>
       <body
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Providers locale={locale} messages={messages}>
+        <Providers
+          locale={locale}
+          messages={messages}
+          key={session?.user?.id ?? "unauthenticated"}
+        >
           {children}
         </Providers>
       </body>
