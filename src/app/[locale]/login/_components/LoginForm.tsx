@@ -1,5 +1,5 @@
 "use client";
-// import { useAppForm } from "@/components/createAppForm";
+
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -9,46 +9,47 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { signIn } from "@/libs/next-auth/actions/authentication";
+import { isRedirectError } from "next/dist/client/components/redirect-error";
 import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
-
+import { toast } from "sonner";
+import { useAppForm } from "@/components/createAppForm";
 export const LoginForm = () => {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/";
-  const router = useRouter();
-  // const form = useAppForm({
-  //   defaultValues: {
-  //     email: "",
-  //     password: "",
-  //   },
-  //   onSubmit: async (data) => {
-  //     await signIn("credentials", {
-  //       ...data.value,
-  //       redirectTo: callbackUrl,
-  //     })
-  //       .then((result) => {
-  //         if (result instanceof Error) {
-  //           toast.error(result.message);
-  //           return;
-  //         }
-  //         throw result;
-  //       })
-  //       .catch((error) => {
-  //         if (isRedirectError(error)) {
-  //           toast.success("Login successful");
-  //           return;
-  //         }
-  //         toast.error("Something went wrong");
-  //       });
-  //   },
-  // });
+  const form = useAppForm({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+    onSubmit: async (data) => {
+      await signIn("credentials", {
+        ...data.value,
+        redirectTo: callbackUrl,
+      })
+        .then((result) => {
+          if (result instanceof Error) {
+            toast.error(result.message);
+            return;
+          }
+          throw result;
+        })
+        .catch((error) => {
+          if (isRedirectError(error)) {
+            toast.success("Login successful");
+            return;
+          }
+          toast.error("Something went wrong");
+        });
+    },
+  });
   return (
     <Dialog open modal>
       <DialogContent className="w-md" showCloseButton={false}>
         <form
           onSubmit={async (e) => {
             e.preventDefault();
-            // await form.handleSubmit();
+            await form.handleSubmit();
           }}
         >
           <DialogHeader>
@@ -57,7 +58,7 @@ export const LoginForm = () => {
               Enter your email and password to sign in to your account.
             </DialogDescription>
           </DialogHeader>
-          {/* <form.AppField name="email">
+          <form.AppField name="email">
             {(field) => {
               return (
                 <field.Input
@@ -78,12 +79,11 @@ export const LoginForm = () => {
                 />
               );
             }}
-          </form.AppField> */}
+          </form.AppField>
           <DialogFooter>
-            {/* <form.AppForm>
+            <form.AppForm>
               <Button type="submit">Login</Button>
-            </form.AppForm> */}
-            <Button type="submit">Login</Button>
+            </form.AppForm>
           </DialogFooter>
         </form>
       </DialogContent>
