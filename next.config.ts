@@ -1,3 +1,4 @@
+import { withPayload } from "@payloadcms/next/withPayload";
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 import withPWAInit from "@ducanh2912/next-pwa";
@@ -55,4 +56,4 @@ const nextConfig = {
   env: {},
 } satisfies NextConfig;
 
-export default withPWA(withNextIntl(nextConfig));
+export default withPayload(withPWA(withNextIntl(nextConfig)));

@@ -22,7 +22,7 @@ export default async function NotFoundRoot() {
   if (typeof window !== "undefined") {
     return null;
   }
-  const locale = await getLocale();
+  const locale = (await getLocale()) || "en";
   const { messages } = await getRequestConfig({
     requestLocale: Promise.resolve(locale),
   });
