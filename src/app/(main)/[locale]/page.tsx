@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/button";
+import { Button } from "@components/ui/button";
 import { SwitchThemeButton } from "@/shared/components/SwitchThemeButton";
 
 export default function Home() {

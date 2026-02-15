@@ -2,9 +2,9 @@ import { getLocale } from "next-intl/server";
 import getRequestConfig from "@/libs/i18n/request";
 import { createTranslator } from "next-intl";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "@components/ui/button";
 import clsx from "clsx";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@components/theme-provider";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Not found",

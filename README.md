@@ -6,11 +6,11 @@
 
 ## 📸 Showcase
 
-| **Desktop View** | **Mobile View** |
-|:---:|:---:|
+|                                       **Desktop View**                                        |                                       **Mobile View**                                       |
+| :-------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------: |
 | <img src="https://placehold.co/600x400?text=Desktop+Preview" alt="Desktop View" width="100%"> | <img src="https://placehold.co/375x812?text=Mobile+Preview" alt="Mobile View" width="100%"> |
 
-*(Replace the placeholder images above with your actual application screenshots)*
+_(Replace the placeholder images above with your actual application screenshots)_
 
 ---
 
@@ -19,22 +19,28 @@
 This project utilizes a cutting-edge technology stack to ensure performance, scalability, and developer experience.
 
 ### Core
+
 - **Framework**: [Next.js 16](https://nextjs.org/) (App Router & Turbopack)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **PWA**: [Next-PWA](https://github.com/DuCanhGH/next-pwa) (@ducanh2912/next-pwa)
 - **Internationalization**: [next-intl](https://next-intl-docs.vercel.app/)
 
 ### Styling & UI
+
 - **CSS Engine**: [TailwindCSS v4](https://tailwindcss.com/)
 - **Utilities**: `clsx`, `tailwind-merge`, `class-variance-authority` (CVA)
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **Animations**: `tw-animate-css`
 
 ### State & Data
+
 - **Server State**: [TanStack Query v5](https://tanstack.com/query/latest) (React Query)
+- **CMS**: [Payload CMS](https://payloadcms.com/)
+- **Database**: [PostgreSQL](https://www.postgresql.org/) (via Payload)
 - **API**: GraphQL Request
 
 ### Quality & DX
+
 - **Linting**: ESLint
 - **Git Hooks**: Husky & Commitlint
 - **Versioning**: [standard-version](https://github.com/conventional-changelog/standard-version)
@@ -49,6 +55,7 @@ This project utilizes a cutting-edge technology stack to ensure performance, sca
 - **🌍 Internationalization**: Built-in i18n support.
 - **⚛️ React 19**: Leveraging the latest React features.
 - **🎨 Modern Styling**: Tailwind v4 with advanced utility merging.
+- **🛠️ Payload CMS**: Headless CMS with TypeScript support.
 
 ---
 
@@ -64,17 +71,20 @@ Review the prerequisites and follow the steps below to set up the project locall
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd nextjs-boilerplate
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start the development server**
+
    ```bash
    npm run dev
    ```
@@ -85,13 +95,13 @@ Review the prerequisites and follow the steps below to set up the project locall
 
 ## 📜 Scripts
 
-| Script | Description |
-| :--- | :--- |
-| `npm run dev` | Starts the development server with Turbopack |
-| `npm run build` | Builds the application for production |
-| `npm run start` | Starts the production server |
-| `npm run lint` | Runs ESLint to check for code quality issues |
-| `npm run prepare` | Installs Husky git hooks |
+| Script            | Description                                             |
+| :---------------- | :------------------------------------------------------ |
+| `npm run dev`     | Starts the development server with Turbopack            |
+| `npm run build`   | Builds the application for production                   |
+| `npm run start`   | Starts the production server                            |
+| `npm run lint`    | Runs ESLint to check for code quality issues            |
+| `npm run prepare` | Installs Husky git hooks                                |
 | `npm run release` | Generates a CHANGELOG and creates a new release version |
 
 ---
@@ -103,7 +113,8 @@ Review the prerequisites and follow the steps below to set up the project locall
 │   ├── app/            # App Router pages & layouts
 │   ├── components/     # Reusable UI components
 │   ├── libs/           # Library configurations (i18n, providers)
-│   └── styles/         # Global styles & Tailwind config
+│   ├── styles/         # Global styles & Tailwind config
+│   └── payload.config.ts # Payload CMS configuration
 ├── public/             # Static assets (images, fonts, PWA icons)
 ├── next.config.ts      # Next.js configuration
 ├── tsconfig.json       # TypeScript configuration

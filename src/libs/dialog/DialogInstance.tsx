@@ -8,7 +8,7 @@ import {
   DialogPortal,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@components/ui/dialog";
 import type { DialogInstanceProps } from "./index.type";
 import {
   createContext,
@@ -46,7 +46,7 @@ const DialogContentInstance = ({
           "max-h-screen overflow-y-auto max-sm:h-screen max-sm:max-w-none max-sm:rounded-none":
             variant === "fullscreen",
         },
-        options?.content?.className
+        options?.content?.className,
       )}
     >
       <DialogHeader {...options?.header}>
@@ -95,7 +95,7 @@ export const useDialogContext = () => {
   const context = useContext(DialogContextInstance);
   if (!context) {
     throw new Error(
-      "useDialogInstance must be used within a DialogInstanceProvider"
+      "useDialogInstance must be used within a DialogInstanceProvider",
     );
   }
   return context;
@@ -108,7 +108,7 @@ export function DialogInstance(
       state: boolean;
     } | null>;
     refContent?: React.RefObject<HTMLDivElement | null>;
-  }
+  },
 ) {
   const options = props.options;
   const { refContent, refDialog, ...propsDialog } = props;
@@ -120,18 +120,14 @@ export function DialogInstance(
   useLayoutEffect(() => {
     props.options?.dialog?.open && setDialogState(props.options?.dialog?.open);
   }, [props.options?.dialog?.open, setDialogState]);
-  useImperativeHandle(
-    refDialog,
-    () => {
-      return {
-        closeDialogRef() {
-          setDialogState(false);
-        },
-        state: dailogState,
-      };
-    },
-    [dailogState, setDialogState]
-  );
+  useImperativeHandle(refDialog, () => {
+    return {
+      closeDialogRef() {
+        setDialogState(false);
+      },
+      state: dailogState,
+    };
+  }, [dailogState, setDialogState]);
 
   return (
     <Dialog {...propsDialog.options?.dialog} open={dailogState}>

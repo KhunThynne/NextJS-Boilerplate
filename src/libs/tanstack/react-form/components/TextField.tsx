@@ -1,10 +1,10 @@
-import { useStore } from "@tanstack/react-form";
-import { useFieldContext } from "../hooks/form-context";
+import { useStore } from '@tanstack/react-form'
+import { useFieldContext } from '../hooks/form-context'
 
 export default function TextField({ label }: { label: string }) {
-  const field = useFieldContext<string>();
+  const field = useFieldContext<string>()
 
-  const errors = useStore(field.store, (state) => state.meta.errors);
+  const errors = useStore(field.store, (state) => state.meta.errors)
 
   return (
     <div>
@@ -17,10 +17,10 @@ export default function TextField({ label }: { label: string }) {
         />
       </label>
       {errors.map((error: string) => (
-        <div key={error} style={{ color: "red" }}>
+        <div key={error} style={{ color: 'red' }}>
           {error}
         </div>
       ))}
     </div>
-  );
+  )
 }

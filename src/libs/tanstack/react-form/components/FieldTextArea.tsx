@@ -1,15 +1,16 @@
-import { Field } from "@/components/ui/field";
-import { useStore } from "@tanstack/react-form";
-import { useFieldContext } from "../hooks";
-import LabelAndDescriptionFieldForm from "./shared/LabelAndDescriptionFieldForm";
-import FieldErrorI18nMessage from "./shared/FieldErrorI18nMessage";
-import { cn } from "@/libs/utils";
-import { Textarea } from "@/components/ui/textarea";
-import type { LabelDescription, WithClassNames } from "./type";
+import { Field } from '@components/ui/field'
+import { useStore } from '@tanstack/react-form'
+import { useFieldContext } from '../hooks'
+import LabelAndDescriptionFieldForm from './shared/LabelAndDescriptionFieldForm'
+import FieldErrorI18nMessage from './shared/FieldErrorI18nMessage'
+
+import { Textarea } from '@components/ui/textarea'
+import type { LabelDescription, WithClassNames } from './type'
+import { cn } from '@components/ui/utils'
 
 type FieldTextAreaProps = LabelDescription &
   React.ComponentProps<typeof Textarea> &
-  WithClassNames<"label" | "description" | "textarea" | "field" | "validate">;
+  WithClassNames<'label' | 'description' | 'textarea' | 'field' | 'validate'>
 
 export default function FieldTextArea({
   label,
@@ -18,9 +19,9 @@ export default function FieldTextArea({
   className,
   ...textarea
 }: FieldTextAreaProps) {
-  const field = useFieldContext<string>();
-  const errors = useStore(field.store, (state) => state.meta.errors);
-  const isInvalid = errors.length > 0;
+  const field = useFieldContext<string>()
+  const errors = useStore(field.store, (state) => state.meta.errors)
+  const isInvalid = errors.length > 0
   return (
     <Field
       data-invalid={isInvalid}
@@ -32,7 +33,7 @@ export default function FieldTextArea({
         description={description}
         classNames={{
           label: cn(`order-1`, classNames?.label),
-          description: cn(`order-3`, classNames?.description),
+          description: cn(`order-3`, classNames?.description)
         }}
       >
         <Textarea
@@ -45,5 +46,5 @@ export default function FieldTextArea({
       </LabelAndDescriptionFieldForm>
       <FieldErrorI18nMessage className={cn(`order-4`, classNames?.validate)} />
     </Field>
-  );
+  )
 }
