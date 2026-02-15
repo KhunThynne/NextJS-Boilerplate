@@ -1,6 +1,6 @@
 {
   "name": "nextjs-boilerplate",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "scripts": {
     "dev": "next dev  --turbo",
@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "prepare": "husky",
-    "release": "standard-version --tag-prefix \"pc-v\"",
+    "release": "standard-version --tag-prefix \"payload-cms@\"",
     "update": "npx npm-check-updates --dep prod,dev --upgrade"
   },
   "type": "module",
