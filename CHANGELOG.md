@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/KhunThynne/NextJS-Boilerplate/compare/v0.1.2...v0.1.3) (2026-02-15)
+
+
+### Features
+
+* Introduce new UI components, integrate Tanstack React Form, add app-level error/not-found pages, and update build configurations. ([1249f22](https://github.com/KhunThynne/NextJS-Boilerplate/commit/1249f2248dffb19eb1e414756ba0c3b1f6ba3c20))
+
 ### [0.1.2](https://github.com/KhunThynne/NextJS-Boilerplate/compare/v0.1.1...v0.1.2) (2025-12-19)
 
 
