@@ -1,12 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
+import { Button } from "@components/ui/button";
+import { Card, CardContent, CardFooter, CardHeader } from "@components/ui/card";
 import type { Metadata } from "next";
 
 // Error boundaries must be Client Components
